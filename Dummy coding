@@ -1,0 +1,45 @@
+# A system to code categorical variables
+
+# fs is available in your working environment
+
+# Create the dummy variables
+dept_code <- dummy.code(fs$dept)
+dept_code
+
+# Merge the dataset in an extended dataframe
+extended_fs <- cbind(dept_code, fs)
+
+# Look at the extended dataframe
+extended_fs
+
+# Provide summary statistics
+summary(extended_fs)
+
+
+
+# `fs` is available in your working environment
+
+# Regress salary against years and publications
+model <- lm(fs$salary ~ fs$years + fs$pubs)
+
+# Apply the summary function to get summarized results for model
+summary(model)
+
+# Compute the confidence intervals for model
+confint(model)
+
+# Create dummies for the categorical variable fs$dept by using the C() function
+dept_code <- C(fs$dept, treatment)
+
+# Regress salary against years, publications and department
+model_dummy <- lm(fs$salary ~ fs$years + fs$pubs + dept_code)
+
+# Apply the summary function to get summarized results for model_dummy
+summary(model_dummy)
+
+# Compute the confidence intervals for model_dummy
+confint(model_dummy)
+
+# Compare model 4 with model 3
+anova(model, model_dummy)
+
