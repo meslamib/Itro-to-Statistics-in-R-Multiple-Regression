@@ -1,0 +1,20 @@
+# Construction of 3 by 8 matrix r that contains the numbers 1 up to 24
+r <- matrix(1:24, nrow = 3, ncol = 8)
+
+# Construction of 3 by 8 matrix s that contains the numbers 21 up to 44
+s <- matrix(21:44, nrow = 3, ncol = 8)
+
+# Take the transpose t of matrix r
+t <- t(r)
+
+
+# The matrices r and s are preloaded in your workspace
+
+# Compute the sum of matrices r and s
+operation_1 <- r + s
+
+# Compute the difference between matrices r and s
+operation_2 <- r - s
+
+# Multiply matrices t and s
+operation_3 <- t %*% s
