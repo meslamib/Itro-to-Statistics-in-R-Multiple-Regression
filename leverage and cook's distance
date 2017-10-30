@@ -9,3 +9,10 @@ mod %>%
   augment() %>%
   arrange(desc(.cooksd)) %>%
   head()
+  
+  
+  # Rank high leverage points
+mod %>%
+  augment() %>%
+  arrange(desc(.hat), .cooksd) %>%
+  head()
