@@ -1,0 +1,5 @@
+# Print ben: data frame contains a height and weight observation for one person
+ben
+
+# Predict the weight of ben based on bdims dataset
+predict(mod, newdata=ben)
