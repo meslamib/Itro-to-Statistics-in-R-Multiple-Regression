@@ -1,0 +1,26 @@
+mod <- lm(wgt ~ hgt, data = bdims)
+
+class(mod)
+
+
+# Show the coefficients
+coef(mod)
+
+# Show the full output
+summary(mod)
+
+# Mean of weights equal to mean of fitted values? yes
+mean(bdims$wgt) == mean(fitted.values(mod))
+
+# Mean of the residuals is zero
+mean(residuals(mod))
+
+
+# Load broom
+library(broom)
+
+# Create bdims_tidy
+bdims_tidy <- augment(mod)
+
+# Glimpse the resulting data frame
+glimpse(bdims_tidy)
