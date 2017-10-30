@@ -1,0 +1,11 @@
+# Rank points of high leverage
+mod %>%
+  augment() %>%
+  arrange(desc(.hat)) %>%
+  head()
+  
+  # Rank points of high cook's distance (magnitude of residual)
+mod %>%
+  augment() %>%
+  arrange(desc(.cooksd)) %>%
+  head()
